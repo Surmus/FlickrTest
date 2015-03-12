@@ -53,7 +53,7 @@
             <div class="clearfix"></div>
             <div class="container">
                 <div class="alert alert-warning center-block" ng-hide="!error" role="alert">{{ error }}</div>
-                <div class="alert alert-dismissible alert-info center-block" ng-hide="!images || loading">
+                <div class="alert alert-dismissible alert-info center-block" ng-hide="!images || loading || error">
                     <p ng-show="cached">Images retrieved from cache</p>
                     <p ng-show="!cached">Images retrieved from Flickr</p>
                 </div>

@@ -71,7 +71,7 @@ class FlickrRepository implements IFlickrRepository
      * @return SimpleXMLElement
      * @throws \Exception
      */
-    private function loadData(string $tags): SimpleXMLElement
+    private function loadData(string $tags): array
     {
         $url = str_replace('{TAGS}', $tags, Config::get('app.flickr_url'));
 

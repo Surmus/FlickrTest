@@ -66,7 +66,7 @@ class FlickrCacheableRepository extends FlickrRepository implements IFlickrRepos
      *
      * @return Collection
      */
-    private function getImagesFromCache(): Collection
+    private function getImagesFromCache(): ?Collection
     {
         return Cache::get($this->tags);
     }
