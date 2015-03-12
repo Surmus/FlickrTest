@@ -1,0 +1,108 @@
+body {
+    background-image: url("../img/background.jpg");
+}
+
+.background-container {
+    height: 0px;
+    width: 0px;
+    position: relative;
+    z-index: -1
+}
+
+#nav-container {
+    margin-top: 9px;
+}
+
+.nav {
+    background-color: transparent;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.nav-background {
+    opacity: 0.3;
+    background:#FFF;
+    height: 50px;
+    position: relative;
+    top: -70px;
+    z-index: -1
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.loader {
+    padding: 20px 20px 0px 20px;
+}
+
+.title-container {
+    height: 0px;
+    position: relative;
+}
+
+.img-title {
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    background: #000000;
+    opacity: 0;
+    -webkit-transition: opacity linear 0.5s;
+    transition: opacity linear 0.5s;
+}
+
+.img-background {
+    background: #000000;
+    opacity: 0.3;
+}
+
+.img-c {
+    margin-bottom: 2em;
+    margin-right: 30px;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-out;
+}
+
+.image, .img-background {
+    height: 300px;
+    width: 100%;
+}
+
+.image img {
+    max-width: 100%;
+    position: relative;
+    max-height: 300px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .image, .img-background {
+        height: 250px;
+    }
+
+    .image img {
+        max-height: 250px;
+    }
+
+    .img-c {
+        margin-right: 0px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .image, .img-background {
+        height: 165px;
+    }
+
+    .image img {
+        max-height: 165px;
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
