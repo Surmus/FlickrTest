@@ -86,6 +86,11 @@ class FlickrRepository implements IFlickrRepository
             throw new \Exception('No data from Flickr');
         }
 
+        //only one element returned
+        if (isset($xmlData['entry']->title)) {
+            return array($xmlData['entry']);
+        }
+
         return $xmlData['entry'];
     }
 }
