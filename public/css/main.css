@@ -73,6 +73,7 @@ body {
     max-width: 100%;
     position: relative;
     max-height: 300px;
+    cursor: pointer;
 }
 
 /* Small devices (tablets, 768px and up) */

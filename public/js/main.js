@@ -7,7 +7,7 @@
  */
 
 (function() {
-    var app = angular.module('flicktTest', []);
+    var app = angular.module('flicktTest', ['ui.bootstrap']);
 
     app.directive('imageContainer', function () {
         return {
@@ -50,7 +50,7 @@
         }
     });
 
-    app.controller('MainCtrl', function ($scope, $http, $location) {
+    app.controller('MainCtrl', function ($scope, $http, $location, $modal) {
         $scope.loading = false;
         $scope.searchTags = $location.search().tags;
 
@@ -76,6 +76,32 @@
         if ($scope.searchTags) {
             $scope.search();
         }
+
+        $scope.open = function (key) {
+            var item = $scope.images[key];
+            $modal.open({
+                templateUrl: 'detailModal.html',
+                controller: 'ModalInstanceCtrl',
+                size: 'lg',
+                resolve: {
+                    items: function () {
+                        return item;
+                    }
+                }
+            });
+        };
+    });
+
+    app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $http, items) {
+
+        if(items.imageUrl) {
+            $scope.loading = false;
+            $scope.image = items;
+        }
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
     });
 }());
 

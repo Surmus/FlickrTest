@@ -15,12 +15,23 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script src="//code.angularjs.org/1.2.9/angular.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
     </head>
     <body ng-app="flicktTest" resizable>
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div ng-controller="MainCtrl">
+            <!-- Detail view Modal -->
+            <script type="text/ng-template" id="detailModal.html">
+                <div class="modal-header" ng-hide="loading">
+                    <button type="button" ng-click="cancel()" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">{{ image.title }}</h3>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ image.imageUrl }}" alt="{{ image.title }}" class="img-responsive center-block"/>
+                </div>
+            </script>
             <!-- Modal -->
             <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareLink" aria-hidden="true">
                 <div class="modal-dialog">
@@ -68,7 +79,7 @@
                             <div class="background-container">
                                 <div class="img-background"></div>
                             </div>
-                            <img src="{{ image.imageUrl }}" alt="{{ image.title }}" class="img-responsive center-block" image/>
+                            <img ng-click="open($index)" src="{{ image.imageUrl }}" alt="{{ image.title }}" class="img-responsive center-block" image/>
                         </div>
                         <div class="title-container">
                             <div class="img-title">{{ image.title }}</div>
