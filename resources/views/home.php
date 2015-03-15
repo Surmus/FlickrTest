@@ -74,8 +74,8 @@
                     </div>
                 </div>
                 <div class="row" ng-hide="loading">
-                    <div ng-repeat="image in images" class="img-c col-sm-4 col-md-2 col-xs-12">
-                        <div class="image" image-container>
+                    <div ng-repeat="image in images" class="img-c col-sm-4 col-md-2 col-xs-12" image-container>
+                        <div class="image">
                             <div class="background-container">
                                 <div class="img-background"></div>
                             </div>

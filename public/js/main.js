@@ -13,11 +13,11 @@
         return {
             link: function(scope, element, attrs) {
                 var hover = function() {
-                    $('.img-title', $(this).parent()).css('opacity', 1);
+                    $('.img-title', $(this)).css('opacity', 1);
                 }
 
                 var unHover = function() {
-                    $('.img-title', $(this).parent()).css('opacity', 0);
+                    $('.img-title', $(this)).css('opacity', 0);
                 }
 
                 element.hover(hover, unHover);
